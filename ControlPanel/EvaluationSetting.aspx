@@ -8,7 +8,7 @@
         <h2>Evaluation Settings</h2>
         <br />
         <p>Select User for <asp:Label runat="server" ID="criteria"/></p>
-        <p><asp:Label ID="AddUserCriteriaStatus" runat="server" ForeColor="Green"></asp:Label></p>
+        <p><asp:Label ID="AddUserCriteriaStatus" runat="server" ForeColor="REd"></asp:Label></p>
         <div align="center" style="overflow:auto; height:300px; padding:0">
             <asp:GridView ID="UserDivisionList" runat="server" DataKeyNames="UserDivID"  AutoGenerateColumns="False" EmptyDataText="There are no data records to display." HorizontalAlign="Center" GridLines="None" Width="300px" >
                 <AlternatingRowStyle BackColor="White" height="20px"/>

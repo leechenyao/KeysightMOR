@@ -67,9 +67,9 @@ namespace KeysightMOR.ControlPanel
                         }
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                
+                    AddUserCriteriaStatus.Text = ex.Message;
                 }
             }
             
@@ -107,9 +107,9 @@ namespace KeysightMOR.ControlPanel
                         sqlConn.Open();
                         DeleteUserCriteria.ExecuteNonQuery();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        criteria.Text = "fail";
+                        AddUserCriteriaStatus.Text = ex.Message;
                     }
                 }
 
@@ -132,11 +132,12 @@ namespace KeysightMOR.ControlPanel
                                 {
                                     sqlConn2.Open();
                                     sqlCmd.ExecuteNonQuery();
+                                    AddUserCriteriaStatus.ForeColor = System.Drawing.Color.Green;
                                     AddUserCriteriaStatus.Text = "User Criteria successfully added";
                                 }
-                                catch
+                                catch (Exception ex)
                                 {
-
+                                    AddUserCriteriaStatus.Text = ex.Message;
                                 }
                             }
                         }
@@ -145,7 +146,6 @@ namespace KeysightMOR.ControlPanel
             }
             else
             {
-                AddUserCriteriaStatus.ForeColor = System.Drawing.Color.Red;
                 AddUserCriteriaStatus.Text = "Please select at least 1 user";
             }
         }
