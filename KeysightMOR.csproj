@@ -51,6 +51,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -123,6 +124,7 @@
     <Content Include="ControlPanel\DeliveryUser.aspx" />
     <Content Include="ControlPanel\DeliveryUserViewEdit.aspx" />
     <Content Include="ControlPanel\EditUser.aspx" />
+    <Content Include="ControlPanel\EvaluationSetting.aspx" />
     <Content Include="ControlPanel\Index.aspx" />
     <Content Include="ControlPanel\DeliveryScore.aspx" />
     <Content Include="ControlPanel\DeliveryScoreViewEdit.aspx" />
@@ -281,6 +283,13 @@
     </Compile>
     <Compile Include="ControlPanel\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel\EvaluationSetting.aspx.cs">
+      <DependentUpon>EvaluationSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel\EvaluationSetting.aspx.designer.cs">
+      <DependentUpon>EvaluationSetting.aspx</DependentUpon>
     </Compile>
     <Compile Include="ControlPanel\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

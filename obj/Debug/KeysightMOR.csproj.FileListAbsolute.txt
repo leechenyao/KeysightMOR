@@ -22,3 +22,9 @@ C:\Users\Adrian Khor\Desktop\KeysightMOR\KeysightMOR\bin\KeysightMOR.pdb
 C:\Users\Adrian Khor\Desktop\KeysightMOR\KeysightMOR\obj\Debug\KeysightMOR.csprojResolveAssemblyReference.cache
 C:\Users\Adrian Khor\Desktop\KeysightMOR\KeysightMOR\obj\Debug\KeysightMOR.dll
 C:\Users\Adrian Khor\Desktop\KeysightMOR\KeysightMOR\obj\Debug\KeysightMOR.pdb
+C:\Users\User\Desktop\KeySight\KeysightMOR\obj\Debug\KeysightMOR.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\KeySight\KeysightMOR\obj\Debug\KeysightMOR.dll
+C:\Users\User\Desktop\KeySight\KeysightMOR\obj\Debug\KeysightMOR.pdb
+C:\Users\User\Desktop\KeySight\KeysightMOR\bin\KeysightMOR.dll.config
+C:\Users\User\Desktop\KeySight\KeysightMOR\bin\KeysightMOR.dll
+C:\Users\User\Desktop\KeySight\KeysightMOR\bin\KeysightMOR.pdb
