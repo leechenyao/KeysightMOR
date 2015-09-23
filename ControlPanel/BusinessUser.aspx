@@ -13,23 +13,25 @@
         </h2>
 
         <fieldset>
-                
-                <p>
-                    Contract Manufacturer : 
-                </p>
-            <p>
-   <asp:DropDownList ID="CM" runat="server" class="dropdown">
-                            <asp:ListItem>Agilent</asp:ListItem>
-                            <asp:ListItem>Jabil</asp:ListItem>
-                            <asp:ListItem>Intel</asp:ListItem>
-                            <asp:ListItem>Keysight</asp:ListItem>
-                            <asp:ListItem>HP</asp:ListItem>
-                            </asp:DropDownList></p>
-                <p><asp:Button ID="Submit" runat="server" Text="Submit" class="action-button hvr-radial-out" PostBackUrl="~/ControlPanel/BusinessUserViewEdit.aspx"/>
-                    &nbsp;&nbsp;
-                    <asp:Button ID="Cancel" runat="server" Text="Cancel" class="cancel_button" PostBackUrl="~/ControlPanel/Index.aspx"/>
-                </p>
-                           </fieldset>
+                <asp:Table ID="Table1" runat="server" style="width: 70%; margin-left: auto; margin-right: auto">
+                    <asp:TableRow>
+                        <asp:TableCell>Contract Manufacturer: </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:DropDownList ID="ddlcm" runat="server" class="dropdown"></asp:DropDownList>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow Height="40px">
+                        <asp:TableCell HorizontalAlign="Center" ColumnSpan="2"><asp:Label ID="SelectCMStatus" runat="server" ForeColor="Red"></asp:Label></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow >
+                        <asp:TableCell style="text-align: right" ColumnSpan="2">
+                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="action-button hvr-radial-out" OnClick="btnSubmit_Click" />
+                            &nbsp;&nbsp;
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="cancel_button" OnClick="btnCancel_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+            </fieldset>
     </div>
         </center>           
 </asp:Content>

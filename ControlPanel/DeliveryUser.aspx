@@ -9,41 +9,26 @@
         <div class="box">
             <h2>Evaluation Settings > Delivery</h2>
 
-            <asp:ScriptManager runat="server" />
-            <asp:UpdatePanel ID="upDeliveryUser" runat="server">
-                <ContentTemplate>
-                    <fieldset>
-                <table style="width:70%;margin-left:auto;margin-right:auto">
-                    <tr>
-                        <td>Contract Manufacturer</td>
-                        <td>
-                            <asp:DropDownList ID="CM" runat="server" class="dropdown" AppendDataBoundItems="true" AutoPostBack="true">
-                                <asp:ListItem Text="Pick CM" Value="-1"></asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="rfvCM" runat="server" ControlToValidate="CM" ErrorMessage="*" ForeColor="Red" InitialValue="-1"></asp:RequiredFieldValidator>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <br />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <table style="float:right">
-                                <tr>
-                                    <td><asp:Button ID="Submit" runat="server" Text="Submit" class="action-button hvr-radial-out" OnClick="Submit_Click" /></td>
-                                    <td><asp:Button ID="Cancel" runat="server" Text="Cancel" class="cancel_button" OnClick="Cancel_Click" /></td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+            <fieldset>
+                <asp:Table ID="Table1" runat="server" style="width: 70%; margin-left: auto; margin-right: auto">
+                    <asp:TableRow>
+                        <asp:TableCell>Contract Manufacturer: </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:DropDownList ID="ddlcm" runat="server" class="dropdown"></asp:DropDownList>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow Height="40px">
+                        <asp:TableCell HorizontalAlign="Center" ColumnSpan="2"><asp:Label ID="SelectCMStatus" runat="server" ForeColor="Red"></asp:Label></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow >
+                        <asp:TableCell style="text-align: right" ColumnSpan="2">
+                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="action-button hvr-radial-out" OnClick="btnSubmit_Click" />
+                            &nbsp;&nbsp;
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="cancel_button" OnClick="btnCancel_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
             </fieldset>
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
     </div>
 </asp:Content>

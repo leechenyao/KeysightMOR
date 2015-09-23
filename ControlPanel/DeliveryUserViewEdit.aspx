@@ -15,61 +15,45 @@
                     <p class="title-description" style="text-align:center">View or edit current users for Delivery</p>
                 </div>
 
-                <table class="duve_table">
-                    <tr>
-                        <td>
-                            <h3>Delivery Template (BRP and Manual)</h3>
-                        </td>
-                        <td>
-                            <h3>Assigned Users</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Actual Delivery vs Requirement</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>Actual Delivery vs Commitment</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>Commitment vs Requirement</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>Exception Commit</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>Delivery Template (IODM)</h3>
-                        </td>
-                        <td>
-                            <h3>Assigned Users</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Actual vs po</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>Commitment vs Requirement</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>Exception Commit</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                </table>
-
+                <asp:Table ID="Delivery" CssClass="duve_table" runat="server">
+                    <asp:TableRow>
+                        <asp:TableCell><h3>Delivery Template (BRP and Manual)</h3></asp:TableCell>
+                        <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Actual delivery versus request (CRD)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D1_1" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Actual delivery versus commit (OTD)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D1_2" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Commit versus request (Commit)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D1_3" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Exception commit (Exception)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D1_4" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><h3>Delivery Template (IODM)</h3></asp:TableCell>
+                        <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Actual versus purchase order (CRD)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D2_1" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Commit versus request (Commit)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D2_2" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>Exception commit (Exception)</asp:TableCell>
+                        <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="D2_3" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
                 <br />
-
-                <div class="div_button">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="action-button hvr-radial-out" OnClick="btnSave_Click" />
-                    &nbsp;&nbsp;
-                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="cancel_button" OnClick="btnCancel_Click"/>
-                </div>
             </fieldset>
 
         </div>

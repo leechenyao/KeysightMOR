@@ -7,39 +7,27 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="margin-left: auto; margin-right: auto">
         <div class="box">
-            <h2>Evaluation Settings > Responsiveness
-            </h2>
+            <h2>Evaluation Settings > Responsiveness</h2>
 
             <fieldset>
-                <asp:ScriptManager runat="server" />
-                <asp:UpdatePanel ID="UPResponsivenessUser" runat="server">
-                    <ContentTemplate>
-                        <table style="width: 70%; margin-left: auto; margin-right: auto">
-                            <tr>
-                                <td>Contract Manufacturer: </td>
-                                <td>
-                                    <asp:DropDownList ID="ddlCm" runat="server" class="dropdown" OnSelectedIndexChanged="ddlCm_SelectedIndexChanged" AppendDataBoundItems="true" AutoPostBack="true">
-                                        <asp:ListItem Text="Pick CM" Value="-1"></asp:ListItem>
-                                    </asp:DropDownList>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="2">
-                                    <br />
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align: right" colspan="2">
-                                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="action-button hvr-radial-out" OnClick="btnSubmit_Click" />
-                                    &nbsp;&nbsp;
-                                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="cancel_button" OnClick="btnCancel_Click" />
-                                </td>
-                            </tr>
-                        </table>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <asp:Table ID="Table1" runat="server" style="width: 70%; margin-left: auto; margin-right: auto">
+                    <asp:TableRow>
+                        <asp:TableCell>Contract Manufacturer: </asp:TableCell>
+                        <asp:TableCell>
+                            <asp:DropDownList ID="ddlcm" runat="server" class="dropdown"></asp:DropDownList>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow Height="40px">
+                        <asp:TableCell HorizontalAlign="Center" ColumnSpan="2"><asp:Label ID="SelectCMStatus" runat="server" ForeColor="Red"></asp:Label></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow >
+                        <asp:TableCell style="text-align: right" ColumnSpan="2">
+                            <asp:Button ID="btnSubmit" runat="server" Text="Submit" class="action-button hvr-radial-out" OnClick="btnSubmit_Click" />
+                            &nbsp;&nbsp;
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="cancel_button" OnClick="btnCancel_Click" />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
             </fieldset>
         </div>
     </div>

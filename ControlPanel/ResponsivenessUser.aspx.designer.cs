@@ -13,22 +13,31 @@ namespace KeysightMOR.ControlPanel {
     public partial class ResponsivenessUser {
         
         /// <summary>
-        /// UPResponsivenessUser control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UPResponsivenessUser;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// ddlCm control.
+        /// ddlcm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCm;
+        protected global::System.Web.UI.WebControls.DropDownList ddlcm;
+        
+        /// <summary>
+        /// SelectCMStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SelectCMStatus;
         
         /// <summary>
         /// btnSubmit control.

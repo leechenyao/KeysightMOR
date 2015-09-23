@@ -149,16 +149,16 @@
 
      
     <div class="this_box">       
-        <h2>
-           
+        <h2>          
             View & Delete Contract Manufacturer
-        </h2>
-
+        </h2>   
+        <br /><asp:Label ID ="DeleteCMStatus" runat="server" ForeColor="Green"></asp:Label>             
         <fieldset>
-                <asp:GridView ID="GridView1" runat="server" DataKeyNames="CMID" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." CellPadding="4" ForeColor="#333333" RowStyle-HorizontalAlign="Center" GridLines="None" Width="581px">
+                <asp:GridView ID="CMList" runat="server" DataKeyNames="CMID" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." OnRowDeleting="CMList_RowDeleting" CellPadding="4" ForeColor="#333333" RowStyle-HorizontalAlign="Center" GridLines="None" Width="581px">
                     <AlternatingRowStyle BackColor="White" height="30px"/>
                     <Columns>
                         <asp:BoundField DataField="CMName" HeaderText="CM Name" SortExpression="CMName" />
+                        <asp:BoundField DataField="CMID" SortExpression="CMName" Visible="false" />
                         <asp:TemplateField HeaderText="Actions">
 			                <ItemTemplate >
 				                <asp:LinkButton ID="DeleteCM" runat="server" CommandName="Delete"
@@ -170,16 +170,6 @@
                     <HeaderStyle BackColor="#FFFFFF" Font-Bold="True" ForeColor="#6BB9F0" height="30px"/>
                     <RowStyle BackColor="#E3EAEB" height="30px"/>            
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:KeysightMORDB %>" 
-                    ProviderName="<%$ ConnectionStrings:KeysightMORDB.ProviderName %>" 
-                    SelectCommand="SELECT * FROM [CM]" 
-                    DeleteCommand="DELETE FROM [CM] WHERE [CMID] = @CMID">
-                    <DeleteParameters>
-                        <asp:Parameter Name="CMID" Type="Int32" />
-                    </DeleteParameters>
-                </asp:SqlDataSource>
-
                 <br />
                              
               

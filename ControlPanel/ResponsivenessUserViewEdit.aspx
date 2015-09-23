@@ -9,91 +9,78 @@
     <div style="margin-left:auto;margin-right:auto">
         <div class="confR_box">       
         <h2>Evaluation Settings > Responsiveness</h2>
-
         <fieldset>
-                <div class="description">
-                    <p class="title-description" style="text-align:center">View or edit current users for Responsiveness</p>
-                   </div>
-         
-                <table cellspacing="0">
-                    <tr>
-                        <td class="Rtable" style="width:50px"><h3>R1</h3></td><td><h3>Communication</h3></td><td><h3>Assigned Users</h3></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">1</td>
-                        <td>Responds to Keysight requests in a timely manner</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">2</td>
-                        <td>Adequately resourced in all areas (with assigned backups)</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">3</td>
-                        <td>Proactively communicates manufacturing process changes, critical issues, or potential problems</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">4</td>
-                         <td>Timely/Accurate communication within and between supplier plants - including best practice leverage</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td><h3>R2</h3></td><td><h3>Materials Management and Reporting</h3></td><td><h3>Assigned Users</h3></td>
-                    </tr>
-                     <tr>
-                        <td class="cell_num">1</td>
-                         <td>Proactively manages shortage process e.g. no surprises</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="cell_num" style="padding:0 10px 0 10px">2 <br /> Reacts appropriately to increases/decreases in Keysight Demand in a timely manner</td>
-                        <td>a) Fulfillment of LLM Safety Stock</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td >b) Fulfillment of FG Safety Stock</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="5" class="cell_num">3 <br />Provides TIMELY monthly reports</td>
-                        <td>a) AP/AR</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>b) ECN</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>c) E&O/Aging inventory & inventory profiling report</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>d) PPV monthly report</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>e) Stock On Hand revaluation report (inclusive quarterly PPV report)</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td><h3>R3</h3></td><td><h3>Execution of Plans and Actions </h3></td><td><h3>Assigned Users</h3></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">1</td>
-                        <td>Improvement plans outlined and actioned within agreed timescale</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                </table>
-            <br />
-                              <div class="div_button">
-                <asp:Button ID="Save1" runat="server" Text="Save"  CssClass="action-button hvr-radial-out"/>
-            &nbsp;&nbsp;
-                            <asp:Button ID="Cancel1" runat="server" Text="Cancel" CssClass="cancel_button" PostBackUrl="~/ControlPanel/ResponsivenessUser.aspx"/>
+            <div class="description">
+                <p class="title-description" style="text-align:center">View or edit current users for Responsiveness</p>
             </div>
-
+         
+            <asp:Table ID="Responsiveness" runat="server" CellSpacing="0">
+                <asp:TableRow>
+                    <asp:TableCell CssClass="Rtable" style="width:50px"><h3>R1</h3></asp:TableCell>
+                    <asp:TableCell><h3>Communication</h3></asp:TableCell>
+                    <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">1</asp:TableCell>
+                    <asp:TableCell>How many cases of delay in responds that you experienced within the month of under review? (Response within 1 business day min)</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R1_1" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">2</asp:TableCell>
+                    <asp:TableCell>No/delay in response due to unavailability of backup?</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R1_2" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">3</asp:TableCell>
+                    <asp:TableCell>Proactively communicate process changes, critical issues or potential problems internally/with suppliers/with Keysight accurately in a timely manner</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R1_3" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell><h3>R2</h3></asp:TableCell>
+                    <asp:TableCell><h3>Materials Management and Reporting</h3></asp:TableCell>
+                    <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">1</asp:TableCell>
+                    <asp:TableCell>Proactively manages shortages process </asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_1" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell RowSpan="2" CssClass="cell_num" style="padding:0 10px 0 10px">2<br />Reacts appropriately to increases/decreases in Keysight Demand in a timely manner</asp:TableCell>
+                    <asp:TableCell>a) Fulfillment of LLM Safety Stock</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_2a" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>b) Fulfillment of FG Safety Stock</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_2b" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell RowSpan="6" CssClass="cell_num">3 <br />Provides timely monthly reports</asp:TableCell>
+                    <asp:TableCell>a) AP/AR</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3a" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>b) inventory</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3b" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>c) ECN</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3c" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>d) PPV monthly report</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3d" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>e) Stock On Hand Revalution report (inclusive quarterly PPV report)</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3e" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>f) Reports related to your area/ portfollio</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="R2_3f" runat="server" CssClass="edit_link">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+            <br />                              
         </fieldset>
     </div> 
     </div>

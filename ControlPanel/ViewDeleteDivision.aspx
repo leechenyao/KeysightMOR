@@ -142,44 +142,28 @@
          <div class="container">
 
     <div class="this_box">       
-        <h2>
-           
+        <h2>         
             View & Delete Division
         </h2>
-
+        <br /><asp:Label ID="DeleteDivisionStatus" runat="server" ForeColor="Green"></asp:Label>
         <fieldset>
-  
-                <br />
-                    <asp:GridView ID="GridView1" runat="server" DataKeyNames="DivID" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." DataSourceID="SqlDataSource2" RowStyle-HorizontalAlign="Center" GridLines="None" Width="580px">
-                        <AlternatingRowStyle BackColor="White" height="30px"/>
-                        <Columns>
-                            <asp:BoundField DataField="DivName" HeaderText="Division Name" SortExpression="DivName" ItemStyle-Width="200px"></asp:BoundField>
-                            <asp:BoundField DataField="DivDescription" HeaderText="Division Description" SortExpression="DivDescription" ItemStyle-Width="200px"></asp:BoundField>
-                            <asp:TemplateField HeaderText="Actions" ItemStyle-Width="180px">
-			                <ItemTemplate >
-				                <asp:LinkButton ID="DeleteDiv" runat="server" CommandName="Delete"
-				                OnClientClick="return confirm('Are you sure you want to delete this Division?');">Delete
-				                </asp:LinkButton>
-			                </ItemTemplate>
-		                </asp:TemplateField>
-                        </Columns>
-                        <HeaderStyle BackColor="#FFFFFF" Font-Bold="True" ForeColor="#6BB9F0" height="30px"/>
-                        <RowStyle BackColor="#E3EAEB" height="30px"/>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:KeysightMORDB %>" 
-                        ProviderName="<%$ ConnectionStrings:KeysightMORDB.ProviderName %>" 
-                        SelectCommand="SELECT * FROM [Division]"
-                        DeleteCommand="DELETE FROM [Division] WHERE [DivID] = @DivID">
-                        <DeleteParameters>
-                            <asp:Parameter Name="DivID" Type="Int32" />
-                        </DeleteParameters>
-                    </asp:SqlDataSource>
- 
-
-                
-            <br />
-                                   
+            <asp:GridView ID="DivisionList" runat="server" DataKeyNames="DivID" OnRowDeleting="DivisionList_RowDeleting" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." RowStyle-HorizontalAlign="Center" GridLines="None" Width="580px">
+                <AlternatingRowStyle BackColor="White" height="30px"/>
+                <Columns>
+                    <asp:BoundField DataField="DivName" HeaderText="Division Name" SortExpression="DivName" ItemStyle-Width="200px"></asp:BoundField>
+                    <asp:BoundField DataField="DivID" ItemStyle-Width="200px" Visible="false"></asp:BoundField>                           
+                    <asp:TemplateField HeaderText="Actions" ItemStyle-Width="180px">
+			            <ItemTemplate >
+				            <asp:LinkButton ID="DeleteDiv" runat="server" CommandName="Delete"
+				            OnClientClick="return confirm('Are you sure you want to delete this Division?');">Delete
+				            </asp:LinkButton>
+			            </ItemTemplate>
+		            </asp:TemplateField>
+                </Columns>
+                <HeaderStyle BackColor="#FFFFFF" Font-Bold="True" ForeColor="#6BB9F0" height="30px"/>
+                <RowStyle BackColor="#E3EAEB" height="30px"/>
+            </asp:GridView>    
+            <br />            
         </fieldset>
     </div>
              

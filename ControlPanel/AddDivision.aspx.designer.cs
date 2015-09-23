@@ -31,24 +31,6 @@ namespace KeysightMOR.ControlPanel {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator valdtxtAddDivName;
         
         /// <summary>
-        /// txtAddDivisionDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddDivisionDescription;
-        
-        /// <summary>
-        /// valdtxtAddDivDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valdtxtAddDivDesc;
-        
-        /// <summary>
         /// lblAddDivisionStatus control.
         /// </summary>
         /// <remarks>

@@ -13,48 +13,48 @@ namespace KeysightMOR.ControlPanel {
     public partial class DeliveryUser {
         
         /// <summary>
-        /// upDeliveryUser control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upDeliveryUser;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// CM control.
+        /// ddlcm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CM;
+        protected global::System.Web.UI.WebControls.DropDownList ddlcm;
         
         /// <summary>
-        /// rfvCM control.
+        /// SelectCMStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCM;
+        protected global::System.Web.UI.WebControls.Label SelectCMStatus;
         
         /// <summary>
-        /// Submit control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// Cancel control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancel;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

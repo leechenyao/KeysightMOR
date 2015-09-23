@@ -10,51 +10,51 @@
 namespace KeysightMOR.ControlPanel {
     
     
-    public partial class ViewDeleteDivision {
+    public partial class EvaluationSetting {
         
         /// <summary>
-        /// Button1 control.
+        /// criteria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label criteria;
         
         /// <summary>
-        /// DeleteDivisionStatus control.
+        /// AddUserCriteriaStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DeleteDivisionStatus;
+        protected global::System.Web.UI.WebControls.Label AddUserCriteriaStatus;
         
         /// <summary>
-        /// DivisionList control.
+        /// UserDivisionList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DivisionList;
+        protected global::System.Web.UI.WebControls.GridView UserDivisionList;
         
         /// <summary>
-        /// Button3 control.
+        /// Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button Submit;
         
         /// <summary>
-        /// Button4 control.
+        /// Cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button Cancel;
     }
 }

@@ -11,17 +11,20 @@ namespace KeysightMOR.ControlPanel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-
+            if (!this.IsPostBack)
+            {
+                string CMID = Request.QueryString["CMID"];
+                if (CMID != null)
+                {
+                    D1_1.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 13;
+                    D1_2.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 14;
+                    D1_3.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 15;
+                    D1_4.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 16;
+                    D2_1.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 17;
+                    D2_2.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 18;
+                    D2_3.NavigateUrl = "~/ControlPanel/EvaluationSetting.aspx?CMID=" + CMID + "&CriteriaID=" + 19;
+                }
+            }
         }
     }
 }

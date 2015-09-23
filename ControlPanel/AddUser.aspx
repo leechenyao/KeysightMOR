@@ -27,14 +27,14 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell></asp:TableCell>
-                        <asp:TableCell><asp:RequiredFieldValidator ID="valdEmail" runat="server" ControlToValidate="usrEmail" ErrorMessage="Email is required" ForeColor="Red"></asp:RequiredFieldValidator></asp:TableCell>
+                        <asp:TableCell><asp:RequiredFieldValidator ID="valdEmail" runat="server" ControlToValidate="usrEmail" ErrorMessage="Email is required" ForeColor="Red"></asp:RequiredFieldValidator><asp:Label ID="EmailExist" runat="server" ForeColor="Red"></asp:Label></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>Position</asp:TableCell>
                         <asp:TableCell>
                             <asp:RadioButtonList ID="Position" AutoPostBack="true" runat="server" OnSelectedIndexChanged="Position_Changed">
                                 <asp:ListItem Value="Employee" Text="Employee"></asp:ListItem>
-                                <asp:ListItem Value="Adminstrator" Text="Adminstrator"></asp:ListItem>
+                                <asp:ListItem Value="Admin" Text="Admin"></asp:ListItem>
                             </asp:RadioButtonList>
                         </asp:TableCell>
                     </asp:TableRow>
@@ -45,34 +45,24 @@
                     <asp:TableRow Visible="false">
                         <asp:TableCell>Division</asp:TableCell>
                             <asp:TableCell style=""><div style="overflow:auto; height:150px; padding:0">
-                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." GridLines="None" >
+                                <asp:GridView ID="DivisionList" runat="server" DataKeyNames="DivID" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." GridLines="None" >
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Select">
+                                        <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="SelectDivision" runat="server"></asp:CheckBox>
                                             </ItemTemplate>                   
                                         </asp:TemplateField>    
                                         <asp:BoundField DataField="DivName" HeaderText="Division" SortExpression="DivName" />
-                                        <asp:BoundField DataField="DivID" HeaderText="DivisionID" SortExpression="DivisionID" />
+                                        <asp:BoundField DataField="DivID" SortExpression="DivID" Visible="false"/>
                                     </Columns>
                                 </asp:GridView></div>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                                    ConnectionString="<%$ ConnectionStrings:KeysightMORDB %>" 
-                                    ProviderName="<%$ ConnectionStrings:KeysightMORDB.ProviderName %>" 
-                                    SelectCommand="SELECT * FROM [Division] ORDER BY DivName"></asp:SqlDataSource>
                             </asp:TableCell>
                         </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell></asp:TableCell>
-                        <asp:TableCell><asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator></asp:TableCell>
-                    </asp:TableRow>
                 </asp:Table>
                 </ContentTemplate></asp:UpdatePanel>                
                 <br />
                 <p style="text-align:center">
-                    <asp:Label ID="lblAddUserStatus" runat="server" Text="" ForeColor="Green"></asp:Label>
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblAddUserStatus" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </p>
                 <div class="div_button" style="text-align:center">
                     <asp:Button ID="btnCreateUser" runat="server" Text="Create" CssClass="action-button hvr-radial-out" OnClick="btnCreateUser_Click" 

@@ -196,76 +196,66 @@ border: solid #BDC3C7 2px;
     </style>
     <center>
     <div class="confB_box">       
-        <h2>
-           
-           Evaluation Settings > Business
-        </h2>
-
+        <h2>Evaluation Settings > Business</h2>
         <fieldset>
-            
-
-                <div class="description">
-                    <center><p class="title-description">View or edit current users for Business</p></center>
-                    
-                </div>
-    
-                
-                <table class="buve_table">
-                    <tr>
-                        <td><h3>B1</h3></td>
-                        <td><h3>Corporate Compliances</h3></td>
-                        <td><h3 >Assigned Users</h3></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2" class="cell_num">1</td>
-                        <td>a) Ability to follow preferred supply paths, including distributor and 3rd party supply channels. This includes following the Keysight negotiated business awards where multiple suppliers are listed on the AVL</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                     <tr>
-                        <td>b) Adhere to standard setting requirements (timeline & data accuracy)</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link"> [Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td><h3>B2</h3></td>
-                        <td><h3>Data Integrity / Accuracy</h3></td>
-                        <td><h3>Assigned Users</h3></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="5" class="cell_num">1 <br />Reporting</td>
-                        <td>a) AP/AR</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>b) ECN</td>
-                       <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>c) E&O/Aging inventory & inventory profiling report</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>d) PPV monthly report</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td>e) Stock On Hand Revaluation report (Inclusive quarterly PPV report)</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                    <tr>
-                        <td class="cell_num">2 <br />Quotation</td>
-                        <td>Production Cost Model accuracy and transparency</td>
-                        <td class="cell_num"><a href="#editdialog" id="edit" class="edit_link">[Edit]</a></td>
-                    </tr>
-                </table> <br />
-               
-
-            <div class="div_button">
-                <asp:Button ID="Save1" runat="server" Text="Save"  CssClass="action-button hvr-radial-out"/>
-            &nbsp;&nbsp;
-                            <asp:Button ID="Cancel1" runat="server" Text="Cancel" CssClass="cancel_button" PostBackUrl="~/ControlPanel/BusinessUser.aspx"/>
+            <div class="description">
+                <center><p class="title-description">View or edit current users for Business</p></center>        
             </div>
-                            
 
+            <asp:Table ID="Business" CssClass="buve_table" runat="server">
+                <asp:TableRow>
+                    <asp:TableCell><h3>B1</h3></asp:TableCell>
+                    <asp:TableCell><h3>Corporate Compliances</h3></asp:TableCell>
+                    <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">1</asp:TableCell>
+                    <asp:TableCell>Ability to follow preferred supply paths, including distributor and 3rd party supply channels. This includes following the Keysight negotiated business awards where multiple suppliers are listed on the AVL.Commit versus request (Commit)</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B1_1" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">2</asp:TableCell>
+                    <asp:TableCell>Adhere to standard setting requirements (timeline & data accuracy)</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B1_2" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">3</asp:TableCell>
+                    <asp:TableCell>Quarterly PPV INV Assessment </asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B1_3" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell><h3>B2</h3></asp:TableCell>
+                    <asp:TableCell><h3>Data Integrity / Accuracy</h3></asp:TableCell>
+                    <asp:TableCell><h3>Assigned Users</h3></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell RowSpan="5" CssClass="cell_num">1 <br />Reporting</asp:TableCell>
+                    <asp:TableCell>a) AP/AR</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_1a" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>b) ECN</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_1b" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>c) E&O/Aging inventory & inventory profiling report</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_1c" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>d) PPV monthly report</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_1d" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>e) Stock On Hand Revaluation report (Inclusive quarterly PPV report)</asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_1e" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell CssClass="cell_num">2<br /> Quotation</asp:TableCell>
+                    <asp:TableCell>Production Cost Model accuracy and transparency </asp:TableCell>
+                    <asp:TableCell CssClass="cell_num"><asp:HyperLink ID="B2_2" CssClass="edit_link" runat="server">[Edit]</asp:HyperLink></asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>              
+            <br />                        
         </fieldset>
         
     </div> 

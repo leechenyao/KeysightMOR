@@ -1,11 +1,14 @@
 ﻿using KeysightMOR.Assets;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Text;
 
 namespace KeysightMOR.ControlPanel
 {
@@ -13,48 +16,40 @@ namespace KeysightMOR.ControlPanel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitDropDownList();
+            if (!Page.IsPostBack)
+            {
+                getCM();
+            }
         }
 
         // Fetches CM data from database and populates the CM, Month, and Year drop down list 
-        private void InitDropDownList()
+        protected void getCM()
         {
-            // SQL query to retrieve CM data from DB
-            string SqlRetrieveCmQuery = "SELECT * FROM [dbo].[CM]";
+            SqlConnection sqlConn = new SqlConnection(Shared.SqlConnString);
+            SqlCommand getCM = new SqlCommand("SELECT * FROM dbo.[CM]", sqlConn);
+            SqlDataAdapter da = new SqlDataAdapter(getCM);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            ddlcm.DataSource = ds.Tables[0];
+            ddlcm.DataValueField = "CMID";
+            ddlcm.DataTextField = "CMName";
+            ddlcm.DataBind();
+            ddlcm.Items.Insert(0, new ListItem("-Select-", "0"));
+        }
 
-            // Opens the SQL connection
-            using (SqlConnection conn = new SqlConnection(Shared.SqlConnString))
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (ddlcm.SelectedItem.Value.ToString() != "0")
             {
-                try
-                {
-                    conn.Open();
-
-                    SqlCommand cmd = new SqlCommand(SqlRetrieveCmQuery, conn);
-
-                    CM.DataSource = cmd.ExecuteReader();
-                    CM.DataTextField = "CMName";
-                    CM.DataValueField = "CMId";
-
-                    CM.DataBind();
-                }
-                catch (Exception ex)
-                {
-                    Response.Write(ex.ToString());
-                }
-
-
+                Response.Redirect("DeliveryUserViewEdit.aspx?CMID=" + ddlcm.SelectedItem.Value.ToString());
+            }
+            else
+            {
+                SelectCMStatus.Text = "Please select 1 CM";
             }
         }
 
-        protected void Submit_Click(object sender, EventArgs e)
-        {
-            if(Page.IsValid)
-            {
-                Response.Redirect("DeliveryUserViewEdit.aspx");
-            }
-        }
-
-        protected void Cancel_Click(object sender, EventArgs e)
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ControlPanel/Index.aspx");
         }

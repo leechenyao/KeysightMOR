@@ -233,49 +233,63 @@ border: solid #BDC3C7 2px;
 
        
     <div class="this_box">       
-        <h2>
-           
+        <h2>   
             Edit Users
         </h2>
-
         <fieldset>
-   
-                <asp:GridView ID="Gridview1" runat="server" DataKeyNames="UserID" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." DataSourceID="SqlDataSource1" RowStyle-HorizontalAlign="Center" GridLines="None" Width="580px">
+   <asp:Label ID="EditUserStatus" runat="server" ForeColor="Green"></asp:Label>
+                <asp:GridView ID="UserList" runat="server" DataKeyNames="UserID" AutoGenerateColumns="False" EmptyDataText="There are no data records to display." OnRowEditing="UserList_RowEditing" OnRowUpdating="UserList_RowUpdating" OnRowCancelingEdit="UserList_RowCancelingEdit" RowStyle-HorizontalAlign="Center" GridLines="None" Width="979px">
                         <AlternatingRowStyle BackColor="White" height="30px"/>
                         <Columns>
+                            <asp:BoundField DataField="UserID" HeaderText="UserID" SortExpression="UserID" ItemStyle-Width="200px" InsertVisible="False" ReadOnly="True" Visible="false">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
                             <asp:BoundField DataField="UserName" HeaderText="Name" SortExpression="UserName" ItemStyle-Width="200px" InsertVisible="False" ReadOnly="True">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
                             <asp:BoundField DataField="UserEmail" HeaderText="Email Address" SortExpression="UserEmail" ItemStyle-Width="200px" InsertVisible="False" ReadOnly="True">
                                 <ItemStyle Width="200px"></ItemStyle>
                             </asp:BoundField>
-                            <asp:TemplateField HeaderText="Position" SortExpression="Position">
+                            <asp:BoundField DataField="Position" HeaderText="Position" SortExpression="Position" ItemStyle-Width="200px" InsertVisible="False" ReadOnly="True">
+                                <ItemStyle Width="200px"></ItemStyle>
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Division" SortExpression="Division">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Position") %>'></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("DivName") %>'></asp:Label>
                                 </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:DropDownList ID="Position" runat="server" Text='<%# Bind("Position") %>'>
-                                         <asp:ListItem Value="Employee">Employee</asp:ListItem>
-                                         <asp:ListItem Value="Admin">Admin</asp:ListItem>
-                                    </asp:DropDownList>
+                                <EditItemTemplate><div style="overflow:auto; height:150px; padding:0">
+                                    <asp:GridView ID="DivisionList" runat="server" AutoGenerateColumns="False" DataKeyNames="DivID" DataSourceID="SqlDataSource2" EmptyDataText="There are no data records to display." GridLines="None">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="SelectDivision" runat="server"></asp:CheckBox>
+                                            </ItemTemplate>                   
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="DivID" SortExpression="DivID" Visible="false"/>    
+                                        <asp:BoundField DataField="DivName" HeaderText="Division" SortExpression="DivName" />                                     
+                                    </Columns>
+                                    </asp:GridView>  </div>
                                 </EditItemTemplate>
                                 <ItemStyle Width="200px" />
                             </asp:TemplateField>
-                            <asp:CommandField ShowEditButton="True" />
+                            <asp:TemplateField HeaderText="Actions" ItemStyle-Width="100px">
+			                    <ItemTemplate>
+				                    <asp:LinkButton ID="EdituserDivision" runat="server" CommandName="edit">Edit Division</asp:LinkButton>
+			                    </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:LinkButton ID="UpdateuserDivision" runat="server" CommandName="update">Update</asp:LinkButton>
+                                    <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel">Cancel</asp:LinkButton>
+                                </EditItemTemplate>
+                                <ItemStyle Width="180px"></ItemStyle>
+		                    </asp:TemplateField>
                         </Columns>
                         <HeaderStyle BackColor="#FFFFFF" Font-Bold="True" ForeColor="#6BB9F0" height="30px"/>
                         <RowStyle BackColor="#E3EAEB" height="30px"/>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:KeysightMORDB %>" 
-                        ProviderName="<%$ ConnectionStrings:KeysightMORDB.ProviderName %>"
-                        SelectCommand="SELECT * FROM [User]" 
-                        UpdateCommand="UPDATE [User] SET [Position] = @Position WHERE [UserID] = @UserID">
-                        <UpdateParameters>
-                            <asp:Parameter Name="Position" Type="String" />
-                        </UpdateParameters>
-                    </asp:SqlDataSource>
-                           
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:KeysightMORConnectionString1 %>" 
+                    ProviderName="<%$ ConnectionStrings:KeysightMORConnectionString1.ProviderName %>" 
+                    SelectCommand="SELECT * FROM [Division] ORDER BY DivName"></asp:SqlDataSource>       
          </fieldset>
     </div>
 </div>

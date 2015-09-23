@@ -20,18 +20,8 @@
                     <asp:RequiredFieldValidator ID="valdtxtAddDivName" runat="server" ControlToValidate="txtAddDivision" ErrorMessage="You must enter a division name!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </p>
 
-                <p>Division Description:</p>
-
                 <p>
-                    <asp:TextBox ID="txtAddDivisionDescription" TextMode="multiline" Width="450px" Columns="50" Rows="5" runat="server" class="txtbox" />
-                </p>
-
-                <p>
-                    <asp:RequiredFieldValidator ID="valdtxtAddDivDesc" runat="server" ControlToValidate="txtAddDivisionDescription" ErrorMessage="You must enter a division description!" ForeColor="Red"></asp:RequiredFieldValidator>
-                </p>
-
-                <p>
-                    <asp:Label ID="lblAddDivisionStatus" runat="server"></asp:Label>
+                    <asp:Label ID="lblAddDivisionStatus" runat="server" ForeColor="Red"></asp:Label>
                 </p>
 
                 <p>
