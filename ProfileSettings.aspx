@@ -162,112 +162,114 @@
             <h2>PROFILE SETTINGS</h2>
             <fieldset>
                 <div class="_container">
-
-
-                    <table>
-                        <tr>
-                            <td colspan="2" style="text-align: center">Current Name: <strong>ABC123</strong></td>
-                        </tr>
-                        <tr>
-                            
-                            <td colspan="2" style="text-align: center">Current Email: <strong>abc_123@gmail.com</strong>
+                    <asp:Table ID="profilesetting" runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" style="text-align: center">Current Name: <strong><asp:Label ID="currentname" runat="server"></asp:Label></strong></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" style="text-align: center">
+                                Current Email: <strong><asp:Label ID="currentemail" runat="server"></asp:Label></strong>
                                 <br />
                                 <br />
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="text-align:center" class="title_edit">Edit Name</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-                        </tr>
-                        <tr>
-                            <td class="cell_item">New Name </td>
-                            <td>
-                                <asp:TextBox ID="TextBox1" class="txtbox" runat="server"></asp:TextBox></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-
-                        </tr>
-                        <tr>
-                            <td class="cell_buttons" colspan="2">
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" CssClass="title_edit" style="text-align:center">Edit Name</asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2"></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_item">New Name </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:TextBox ID="NewName" CssClass="txtbox" runat="server"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Height="10px">
+                            <asp:TableCell ColumnSpan="2">
+                                <asp:Label ID="NewNameStatus" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" CssClass="cell_buttons">
                                 <br />
-                                    <asp:Button ID="Button5" runat="server" class="buttons hvr-radial-out" Text="Change" />
-                                    <asp:Button ID="Button6" runat="server" class="cancel_button" Text="Cancel" PostBackUrl="~/Home.aspx" OnClick="Button3_Click"/>
-                                <br />
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" style="text-align: center" class="title_edit">Edit Email</td>
-
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-
-                        </tr>
-                        <tr>
-                            <td class="cell_item">New Email </td>
-                            <td>
-                                <asp:TextBox ID="newEmail" class="txtbox" runat="server"></asp:TextBox></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"></td>
-
-                        </tr>
-                        <tr>
-                            <td class="cell_buttons" colspan="2">
-                                <br />
-                                    <asp:Button ID="Button1" runat="server" class="buttons hvr-radial-out" Text="Change" />
-                                    <asp:Button ID="Button3" runat="server" class="cancel_button" Text="Cancel" PostBackUrl="~/Home.aspx" OnClick="Button3_Click"/>
+                                <asp:Button ID="NewNameChange" runat="server" CssClass="buttons hvr-radial-out" Text="Change" OnClick="NewNameChange_Click" />&nbsp
+                                <asp:Button ID="NewNameCancel" runat="server" CssClass="cancel_button" Text="Cancel" />
                                 <br />
                                 <br />
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td colspan="2" style="text-align: center" class="title_edit">Edit Password</td>
-
-                        </tr>
-
-                        <tr>
-                            <td colspan="2"></td>
-
-                        </tr>
-
-                        <tr>
-                            <td class="cell_item">Old Password </td>
-                            <td>
-                                <asp:TextBox ID="oldPw" class="txtbox" runat="server" TextMode="Password"></asp:TextBox></td>
-                        </tr>
-                        <tr>
-                            <td class="cell_item">New Password </td>
-                            <td>
-                                <asp:TextBox ID="newPw" class="txtbox" runat="server" TextMode="Password"></asp:TextBox></td>
-                        </tr>
-                        <tr>
-                            <td class="cell_item">Repeat new password</td>
-                            <td>
-                                <asp:TextBox ID="newPw2" class="txtbox" runat="server" TextMode="Password" /></td>
-                        </tr>
-                        <tr>
-                            <td class="cell_buttons" colspan="2">
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" CssClass="title_edit" style="text-align:center">Edit Email</asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2"></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_item">New Email</asp:TableCell>
+                            <asp:TableCell>
+                                <asp:TextBox ID="NewEmail" CssClass="txtbox" runat="server"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Height="10px">
+                            <asp:TableCell ColumnSpan="2">
+                                <asp:Label ID="NewEmailStatus" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" CssClass="cell_buttons">
                                 <br />
-                                <asp:Button ID="Button2" runat="server" class="buttons hvr-radial-out" Text="Change" />
-                                <asp:Button ID="Button4" runat="server" class="cancel_button" Text="Cancel" PostBackUrl="~/Home.aspx"/>
+                                <asp:Button ID="NewEmailChange" runat="server" CssClass="buttons hvr-radial-out" Text="Change" OnClick="NewEmailChange_Click" />&nbsp
+                                <asp:Button ID="NewEmailCancel" runat="server" CssClass="cancel_button" Text="Cancel" />
                                 <br />
                                 <br />
-                            </td>
-                        </tr>
-                    </table>
-
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2"></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2" CssClass="title_edit" style="text-align:center">Edit Password</asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell ColumnSpan="2"></asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_item">Old Password </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:TextBox ID="oldPw" CssClass="txtbox" runat="server" TextMode="Password"></asp:TextBox><br />
+                                <asp:Label ID="oldPwStatus" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_item">New Password </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:TextBox ID="newPw" CssClass="txtbox" runat="server" TextMode="Password"></asp:TextBox><br />
+                                <asp:Label ID="newPwStatus" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_item">Repeat New Password </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:TextBox ID="newPw2" CssClass="txtbox" runat="server" TextMode="Password"></asp:TextBox><br />
+                                <asp:Label ID="newPw2Status" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow Height="10px">
+                            <asp:TableCell ColumnSpan="2">
+                                <asp:Label ID="ChangePwStatus" runat="server"></asp:Label>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell CssClass="cell_buttons" ColumnSpan="2">
+                                <br />
+                                <asp:Button ID="NewPwChange" runat="server" CssClass="buttons hvr-radial-out" Text="Change" OnClick="NewPwChange_Click" />&nbsp
+                                <asp:Button ID="NewPwCancel" runat="server" CssClass="cancel_button" Text="Cancel" />
+                                <br />
+                                <br />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
                 </div>
             </fieldset>
         </div>

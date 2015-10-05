@@ -13,58 +13,103 @@ namespace KeysightMOR {
     public partial class ProfileSettings {
         
         /// <summary>
-        /// TextBox1 control.
+        /// profilesetting control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Table profilesetting;
         
         /// <summary>
-        /// Button5 control.
+        /// currentname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.Label currentname;
         
         /// <summary>
-        /// Button6 control.
+        /// currentemail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
+        protected global::System.Web.UI.WebControls.Label currentemail;
         
         /// <summary>
-        /// newEmail control.
+        /// NewName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newEmail;
+        protected global::System.Web.UI.WebControls.TextBox NewName;
         
         /// <summary>
-        /// Button1 control.
+        /// NewNameStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label NewNameStatus;
         
         /// <summary>
-        /// Button3 control.
+        /// NewNameChange control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button NewNameChange;
+        
+        /// <summary>
+        /// NewNameCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewNameCancel;
+        
+        /// <summary>
+        /// NewEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewEmail;
+        
+        /// <summary>
+        /// NewEmailStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NewEmailStatus;
+        
+        /// <summary>
+        /// NewEmailChange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewEmailChange;
+        
+        /// <summary>
+        /// NewEmailCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewEmailCancel;
         
         /// <summary>
         /// oldPw control.
@@ -76,6 +121,15 @@ namespace KeysightMOR {
         protected global::System.Web.UI.WebControls.TextBox oldPw;
         
         /// <summary>
+        /// oldPwStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label oldPwStatus;
+        
+        /// <summary>
         /// newPw control.
         /// </summary>
         /// <remarks>
@@ -83,6 +137,15 @@ namespace KeysightMOR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox newPw;
+        
+        /// <summary>
+        /// newPwStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label newPwStatus;
         
         /// <summary>
         /// newPw2 control.
@@ -94,21 +157,39 @@ namespace KeysightMOR {
         protected global::System.Web.UI.WebControls.TextBox newPw2;
         
         /// <summary>
-        /// Button2 control.
+        /// newPw2Status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label newPw2Status;
         
         /// <summary>
-        /// Button4 control.
+        /// ChangePwStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Label ChangePwStatus;
+        
+        /// <summary>
+        /// NewPwChange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewPwChange;
+        
+        /// <summary>
+        /// NewPwCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewPwCancel;
     }
 }

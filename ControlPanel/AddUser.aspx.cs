@@ -9,6 +9,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Text;
+using System.Web.Configuration;
+using System.Security.Cryptography;
 
 namespace KeysightMOR.ControlPanel
 {
@@ -85,14 +87,20 @@ namespace KeysightMOR.ControlPanel
                     else
                     {
                         string SqlAddUserCmd;
+                        MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+                        Byte[] hashedBytes;
+                        UTF32Encoding encoder = new UTF32Encoding();
 
-                        SqlAddUserCmd = "INSERT INTO dbo.[User](UserName, UserEmail, Password, Position, Status) VALUES (@UserName, @UserEmail, '12345', @Position, 1)";
+                        hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes("123456789"));
+
+                        SqlAddUserCmd = "INSERT INTO dbo.[User](UserName, UserEmail, Password, Position, Status) VALUES (@UserName, @UserEmail, @Password, @Position, 1)";
 
                         SqlConnection sqlConn2 = new SqlConnection(Shared.SqlConnString);
                         SqlCommand sqlCmd = new SqlCommand(SqlAddUserCmd, sqlConn2);
 
                         sqlCmd.Parameters.AddWithValue("@UserName", usrName.Text);
                         sqlCmd.Parameters.AddWithValue("@UserEmail", usrEmail.Text);
+                        sqlCmd.Parameters.AddWithValue("@Password", hashedBytes);
                         sqlCmd.Parameters.AddWithValue("@Position", Position.Text);
 
                         using (sqlConn2)
